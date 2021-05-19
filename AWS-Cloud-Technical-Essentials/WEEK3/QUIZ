@@ -1,0 +1,140 @@
+질문 1
+다음 중 Amazon S3의 일반적인 사용 사례는 무엇입니까?
+
+1 / 1점
+
+여러 EC2 인스턴스를위한 파일 스토리지
+
+
+EC2 인스턴스 용 블록 스토리지
+
+
+부팅 드라이브 용 개체 저장소
+
+
+미디어 호스팅을위한 개체 스토리지
+
+맞습니다
+Amazon S3 is an object storage service designed for large objects like media files. Because you can store unlimited objects, and each individual object can be up to 5 TBs, S3 is an ideal location to host video, photo, or music uploads. This information is found in the video “Object Storage with Amazon S3”.
+
+2.
+질문 2
+EC2 인스턴스에서 트랜잭션이 많은 관계형 데이터베이스를위한 스토리지 계층이 필요한 경우 다음 중 권장되는 서비스는 무엇입니까?
+
+0 / 1점
+
+아마존 S3
+
+
+Amazon EFS
+
+
+Amazon EC2 인스턴스 스토어
+
+
+Amazon EBS
+
+틀립니다
+Amazon EBS would be ideal for a high-transaction database storage layer. Amazon S3 is not ideal, as it’s considered WORM (write once, read many) storage. EC2 Instance Store is ephemeral, and persistence is needed for databases. EFS is for ideal when you have multiple servers that need access to the same set of files. Check out the video “Amazon EC2 Instance Storage and Amazon Elastic Block Store” for more information.
+
+3.
+질문 3
+참 또는 거짓 : Amazon EBS 볼륨은 임시 스토리지로 간주됩니다.
+
+1 / 1점
+
+진실
+
+
+그릇된
+
+맞습니다
+Amazon EC2 Instance Store is considered ephemeral storage. EBS is considered persistent storage. This content is covered in the video “Amazon EC2 Instance Storage and Amazon Elastic Block Store”.
+
+4.
+질문 4
+귀하는 거의 액세스하지 않는 7 년 동안의 환자 정보를 저장하는 의료 시설의 직원입니다. 상사는이 정보를 저장할 Amazon S3 스토리지 계층 중 하나를 고려하기를 원합니다. 어떤 스토리지 계층을 제안해야합니까?
+
+0 / 1점
+
+S3 표준
+
+
+S3 Glacier Deep 아카이브
+
+
+S3 Standard-Infrequent Access
+
+
+S3 Intelligent-Tiering
+
+틀립니다
+Amazon Glacier Deep Archive is Amazon S3’s lowest-cost storage class and supports long-term retention and digital preservation for data that may be accessed once or twice in a year. It is designed for customers—particularly those in highly regulated industries, such as the Financial Services, Healthcare, and Public Sectors—that retain data sets for 7 to 10 years or longer to meet regulatory compliance requirements. Check out Reading 3.3 for more information on Amazon S3 Glacier Deep Archive. 
+
+5.
+질문 5
+참 또는 거짓 : 버킷 이름은 모든 AWS 계정에서 고유해야합니다.
+
+1 / 1점
+
+진실
+
+
+그릇된
+
+맞습니다
+Amazon S3 is a regional service. However, the namespace is shared by all AWS accounts, so the bucket name must be a globally unique. This information is covered in the video “Object Storage with Amazon S3”.
+
+6.
+질문 6
+참 또는 거짓 : 다중 AZ 배포는 데이터베이스의 가용성을 높이려는 경우 유용합니다.
+
+1 / 1점
+
+진실
+
+
+그릇된
+
+맞습니다
+When you use Amazon RDS, it places the DB instance into a subnet which is bound by one AZ. For high availability reasons, you should use a Multi-AZ deployment in case one AZ is temporarily unavailable. This information can be found in the Introduction to Amazon Relational Database Service video and corresponding readings.
+
+7.
+질문 7
+다음 시나리오를 고려하십시오. 모든 데이터가 동일한 속성을 모두 공유하는 것은 아니므로 데이터 내에서 변형이있는 데이터 세트에 대한 데이터베이스를 선택하는 AWS Architect입니다. 이 솔루션을 위해 어떤 데이터베이스를 선택해야합니까?
+
+0 / 1점
+
+Amazon QLDB
+
+
+Amazon Neptune
+
+
+Amazon DynamoDB
+
+
+Amazon 관계형 데이터베이스 서비스 
+
+틀립니다
+Amazon DynamoDB allows for a flexible schema, so each item can have variation in the attributes outside of the primary and secondary key. This information can be found in the Introduction to Amazon DynamoDB video and corresponding reading.
+
+8.
+질문 8
+Amazon Relational Database Service를 사용할 때 데이터베이스 실행 및 운영에 대한 책임은 무엇입니까?
+
+0 / 1점
+
+기본 인프라 프로비저닝 및 관리
+
+
+DB 인스턴스에 RDBMS 설치
+
+
+데이터베이스 최적화
+
+
+DB 인스턴스 용 OS에 패치 설치
+
+틀립니다
+When using Amazon RDS, you are no longer responsible for the underlying environment the database runs on, instead you can focus on optimizing the database. This is because Amazon RDS has components that are managed by AWS. This information can be found in the Explore Databases on AWS Video.
